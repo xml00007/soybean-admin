@@ -48,7 +48,7 @@ function createProxyItem(item: App.Service.ServiceConfigItem, enableLog: boolean
         consola.log(bgRed(`Error: ${req.method} `), green(`${options.target}${req.url}`));
       });
     },
-    rewrite: path => path.replace(new RegExp(`^${item.proxyPattern}`), '')
+    rewrite: path => path.replace(new RegExp(`^${item.proxyPattern}`), '/api')
   };
 
   return proxy;
